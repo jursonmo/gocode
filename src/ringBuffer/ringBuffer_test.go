@@ -27,6 +27,7 @@ func TestGetBuf(t *testing.T) {
 	if buf == nil {
 		t.Fatal("shouldn't be nil")
 	}
+	t.Log("ok--------------\n")
 }
 
 func TestRBLen(t *testing.T) {
@@ -58,4 +59,5 @@ func TestRBLen(t *testing.T) {
 	if rb.Len() != 3 {
 		t.Fatal("rb.Len() fail , %d", rb.Len())
 	}
+	t.Log("ok--------------\n")
 }
