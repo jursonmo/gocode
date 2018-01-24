@@ -121,9 +121,13 @@ func releasePktBuf(pb *PktBuf) int32 {
 
 func (rb *RingBuffer) Len() uint16 {
 	//fmt.Println(rb.hdr.w, rb.hdr.r)
+	if rb.hdr.w == rb.hdr.r {
+		return 0
+	}
 	if rb.hdr.w > rb.hdr.r {
 		return rb.hdr.w - rb.hdr.r
 	}
+
 	return rb.hdr.count - rb.hdr.r + rb.hdr.w
 }
 

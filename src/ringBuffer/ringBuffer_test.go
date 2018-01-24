@@ -32,6 +32,11 @@ func TestGetBuf(t *testing.T) {
 func TestRBLen(t *testing.T) {
 	size := 4
 	rb := CreateRingBuffer(size)
+
+	if rb.Len() != 4 {
+		t.Fatal("rb.Len() fail , %d", rb.Len())
+	}
+
 	bs := make([]*PktBuf, size)
 	for i := 0; i < size; i++ {
 		b := rb.GetBuf()
@@ -39,6 +44,9 @@ func TestRBLen(t *testing.T) {
 			t.Fatal("shouldn't be nil")
 		}
 		bs[i] = b
+	}
+	if rb.Len() != 0 {
+		t.Fatal("rb.Len() fail , %d", rb.Len())
 	}
 
 	for i := 0; i < 3; i++ {
