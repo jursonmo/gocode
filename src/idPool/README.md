@@ -1,0 +1,1 @@
+so simple id pool,  NewIDPool(10), you will have a idpool that id from 1 to 10
