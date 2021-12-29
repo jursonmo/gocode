@@ -3,3 +3,5 @@
 
 #### 下面这个图，是当年学习内核定时器时的草稿。
 ![image](https://github.com/jursonmo/gocode/raw/master/src/timer/timer.jpg)
+
+#### 用slice 来当timer 列表，其实不利于timer的删除，最好还是用ilist, 添加删除都很方便。类似于内核链表做法. 可以参考[netstack ilist](https://github.com/google/netstack/blob/master/ilist/list.go)
